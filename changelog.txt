@@ -1,3 +1,8 @@
+September 19th, 2018:
+mysqlmymonlite.sh v0.5.6 / v0.5.6 WHM / v0.5.6 Debian
+* improved nginx.conf detection
+* whm compatibility fix
+
 May 3rd, 2017:
 mysqlmymonlite.sh v0.5.5 / v0.5.5 WHM / v0.5.5 Debian
 * Update nginx.conf settings inspection/display
