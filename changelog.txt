@@ -1,0 +1,329 @@
+May 3rd, 2017:
+mysqlmymonlite.sh v0.5.5 / v0.5.5 WHM / v0.5.5 Debian
+* Update nginx.conf settings inspection/display
+* Update mysqltuner.pl 1.7.1
+
+August 26th, 2015:
+mysqlmymonlite.sh v0.5.4 / v0.5.4 WHM / v0.5.4 Debian
+* update for defaults-extra-file support for mysql 5.6 & mysqltuner.pl 1.5.1 with MariaDB 10 and Aria Engine support
+
+March 4th, 2015:
+mysqlmymonlite.sh v0.5.3 / v0.5.3 WHM / v0.5.3 Debian
+* fix mysqltuner --forcemem prompt when root password set
+
+January 21st, 2014:
+mysqlmymonlite.sh v0.5.2 / v0.5.2 WHM / v0.5.2 Debian
+* Added WEBONLY variable option - for non-MySQL servers (i.e. remote MySQL setups)
+* Added smem stats output to memory info function http://www.selenic.com/smem/
+* Updated PHP Info output to detect Zend Opcode cache settings
+
+September 6th, 2013:
+mysqlmymonlite.sh v0.5.1 / v0.5.1 WHM / v0.5.1 Debian
+* Updated WHM version perlmod script alternative location
+
+August 8th, 2013:
+mysqlmymonlite.sh v0.5.0 / v0.5.0 WHM / v0.5.0 Debian
+* Updated WHM version with perl DBD::mysql check
+
+August 4th, 2013:
+mysqlmymonlite.sh v0.4.9 / v0.4.9 WHM / v0.4.9 Debian
+* Minor code cleanup and revisions
+
+May 13th, 2013:
+mysqlmymonlite.sh v0.4.8 / v0.4.8 WHM / v0.4.8 Debian
+* Updated mysqlmymonlite.sh for OpenLiteSpeed web server support http://vbtechsupport.com/2165/
+
+March 12th, 2013:
+mysqlmymonlite.sh v0.4.7 / v0.4.7 WHM / v0.4.7 Debian
+* Additional InnoDB Buffer Pool Stats from MySQL 5.5 Information Schema tables
+
+February 6th, 2013:
+mysqlmymonlite.sh v0.4.6 / v0.4.6 WHM / v0.4.6 Debian
+* Additional system process limit display info added
+
+December 9th, 2012:
+mysqlmymonlite.sh v0.4.5 / v0.4.5 WHM / v0.4.5 Debian
+* Minor change in disk usage command from df -h to df -Th
+
+October 22nd, 2012:
+mysqlmymonlite.sh v0.4.4 / v0.4.4 WHM / v0.4.4 Debian
+* Improve performance and speed
+* Updated mysqlreport with MariaDB Aria Storage Engine Page Cache stats patch
+
+August 7th, 2012:
+mysqlmymonlite.sh v0.4.3 / v0.4.3 WHM / v0.4.3 Debian
+* Fixed mysqltuner and mysql connection options
+
+July 3rd, 2012:
+mysqlmymonlite.sh v0.4.2 / v0.4.2 WHM / v0.4.2 Debian
+* Add MySQL 5.5+ Performance Schema support via pschema option http://dev.mysql.com/doc/refman/5.5/en/performance-schema.html
+
+May 30th, 2012:
+mysqlmymonlite.sh v0.4.1 / v0.4.1 WHM / v0.4.1 Debian
+* Fixed MySQL error log detection to prevent hanging when log not found
+
+May 22nd, 2012:
+mysqlmymonlite.sh v0.4.0 / v0.4.0 WHM / v0.4.0 Debian
+* Fixed nginx.conf path detection for nginx.org rpms again and also added a new variable to override the nginx.conf path manually, if NGINXCONFPATHOVERRIDE='' is set to a non-empty value path
+* Added optional separate config.ini, you can use to define all variables needed to setup mysqlmymonlite.sh. This makes upgrading mysqlmymonlite.sh easier (if there's no config.ini changes), as you can just overwrite old mysqlmymonlite.sh with new version without having to re-setup your settings as they would be in config.ini. Place config.ini in same directory that mysqlmymonlite.sh is located.
+
+May 13th, 2012:
+mysqlmymonlite.sh v0.3.9 / v0.3.9 WHM / v0.3.9 Debian
+* Fixed nginx.conf path variable defined in various Nginx init.d startup scripts for CentOS & CentOS WHM versions
+
+May 8th, 2012:
+mysqlmymonlite.sh v0.3.8 / v0.3.8 WHM / v0.3.8 Debian
+* Added new menu option called 'custom' which can be called via ./mysqlmymonlite.sh custom. This option allows you to create a separate includes file name it incopt.inc and place it in same direct mysqlmymonlite.sh is located in. You can add your own custom SSH bash shell commands to this incopt.inc file to further extend mysqlmymonlite.sh's functionality and usefulness. Invoke and run these custom commands via:  ./mysqlmymonlite.sh custom
+
+April 28th, 2012:
+mysqlmymonlite.sh v0.3.7 / v0.3.7 WHM / v0.3.7 Debian
+* Updated Litespeed web server, LSPHP config & stats output http://mysqlmymon.com/#litespeedstats
+
+April 24th, 2012:
+mysqlmymonlite.sh v0.3.6 / v0.3.6 WHM / v0.3.6 Debian
+* Added MySQL server hostname variable, MYSQLHOST to options
+* Added variable, MYSQLSERVERONLY to script, for remote MySQL only servers defaults to no 'n'
+* Added WHM/Cpanel version info to WHM version
+
+April 10th, 2012:
+mysqlmymonlite.sh v0.3.5 / v0.3.5 WHM / v0.3.5 Debian
+* Updated PHP reported info for WHM/Cpanel to include current PHP handler type
+
+March 28th, 2012:
+mysqlmymonlite.sh v0.3.4 / v0.3.4 WHM / v0.3.4 Debian
+* Updated how NGINXCONFPATH variable is determined
+
+March 4th, 2012:
+mysqlmymonlite.sh v0.3.3 / v0.3.3 WHM / v0.3.3 Debian
+* Added LSAPI PHP info for Litespeed web server when detected
+
+February 4th, 2012:
+mysqlmymonlite.sh v0.3.2 / v0.3.2 WHM / v0.3.2 Debian
+* Improved basic mysql stats summary with more detailed Query Cache info
+
+January 10th, 2012:
+mysqlmymonlite.sh v0.3.1 / v0.3.1 WHM / v0.3.1 Debian
+* Disable PER TABLE DATABASE details to reduce total text output. You can re-enable 
+   per table out put by setting SHOWPERTABLE='y'
+
+December 17th, 2011:
+mysqlmymonlite.sh v0.3.0 / v0.3.0 WHM / v0.3.0 Debian
+*Add Litespeed web server check
+*Add Litespeed server stats
+
+December 14th, 2011: 
+mysqlmymonlite.sh v0.2.9 / v0.2.9 WHM / v0.2.9 Debian
+* Fixed Apache check function
+* Add function for non-root pass set function
+* Add function for basic mysql stats summary
+
+December 4th, 2011: 
+mysqlmymonlite.sh v0.2.8 / v0.2.8 WHM / v0.2.8 Debian
+* Rolled all 3 versions into one zip file 
+* Sync'd version numbers for CentOS and CentOS WHM versions with Debian at v0.2.8
+* Minor fixes to apache and nginx process detection routines
+
+September 14th, 2011:
+mysqlmymonlite.sh v0.2.5 / v0.2.5 WHM / v0.2.7 Debian 
+Added new ./mysqlmymonlite.sh psmem function
+
+September 12th, 2011:
+mysqlmymonlite.sh v0.2.4 / v0.2.4 WHM / v0.2.6 Debian 
+Added which command check and install routine
+
+September 10th, 2011:
+mysqlmymonlite.sh v0.2.3 / v0.2.3 WHM / v0.2.5 Debian 
+Fixed ./mysqlmymonlite.sh showindex function
+
+August 30th, 2011: mysqlmymonlite.sh v0.2.2 / v0.2.2 WHM / v0.2.4 Debian
+* Streamline and changed order of mysql output
+
+
+August 18th, 2011: mysqlmymonlite.sh v0.2.1 / v0.2.1 WHM / v0.2.3 Debian 
+* MASKDB option added which is enabled by default, when set to MASKDB='y' all databases' names are partially masked for privacy reasons to allow public use of mysqlmymonlite.sh script. You can unhide database names by setting MASKDB='n'
+
+August 13th, 2011: mysqlmymonlite.sh v0.2.0 / v0.2.0 WHM / v0.2.2 Debian 
+* Added mysqlfullreport menu option: ./mysqlmymonlite.sh mysqlfullreport.
+* Added modified mysqltuner menu option: ./mysqlmymonlite.sh mysqltuner.
+
+July 19th, 2011: mysqlmymonlite.sh v0.1.9 / v0.1.9 WHM / v0.2.1 Debian 
+* Added specific mysqlreport menu option: ./mysqlmymonlite.sh mysqlreport. Shorter output if you don't need all the info for optimisation requests but want to check your mysql stats out now and again.
+
+July 18th, 2011: mysqlmymonlite.sh v0.2.0 Debian 
+* Fixed Apache mod_status summary output for Debian version i.e.
+
+	
+Code:
+
+	
+   Server Version: Apache/2.2.16 (Debian) PHP/5.3.3-7+squeeze3 with
+   Server Built: Mar 22 2011 21:14:10
+   Current Time: Monday, 18-Jul-2011 10:33:45 EST
+   Restart Time: Monday, 18-Jul-2011 10:31:10 EST
+   Parent Server Generation: 0
+   Total accesses: 3 - Total Traffic: 8 kB
+   CPU Usage: u0 s0 cu0 cs0
+   .0195 requests/sec - 53 B/second - 2730 B/request
+   1 requests currently being processed, 4 idle workers
+
+ 
+July 16th, 2011: mysqlmymonlite.sh v0.1.8 / v0.1.8 WHM / v0.1.9 Debian 
+* Added Apache mod_status summary output i.e.
+
+	
+Code:
+
+	
+   Server Version: Apache/2.2.19 (Unix) mod_ssl/2.2.19
+   Server Built: Jul 14 2011 11:15:55
+   Current Time: Sunday, 17-Jul-2011 05:00:11 PDT
+   Restart Time: Thursday, 14-Jul-2011 12:03:27 PDT
+   Parent Server Generation: 33
+   Total accesses: 1616442 - Total Traffic: 11.7 GB
+   CPU Usage: u423.15 s3.81 cu0 cs0 - .183% CPU load
+   6.91 requests/sec - 52.5 kB/second - 7.6 kB/request
+   3 requests currently being processed, 18 idle workers
+
+ 
+
+July 16th, 2011: mysqlmymonlite.sh v0.1.7 / v0.1.7 WHM / v0.1.8 Debian 
+* Added EXCLUDEDB variable - you can define which database names to exclude from PER TABLE listings of row count, index/data size, storage engine type etc. Leaving just vB database names for listing info only. You can use dblist menu option to grab full database list for editing.
+
+	
+Code:
+
+	
+EXCLUDEDB="test information_schema"
+
+
+* Added ./mysqlmymonlite.sh dblist function. Useful for populating EXCLUDEDB variable.
+
+	
+Code:
+
+	
+[root@localhost ~]# ./mysqlmymonlite.sh dblist
+db2 horde mysql roundcube sbtest test
+
+ 
+
+July 16th, 2011: mysqlmymonlite.sh v0.1.6 / v0.1.6 WHM / v0.1.7 Debian 
+* Script attempts to rewrite and mask your server hostname to 'yourserverhostname' value to hide your server hostname from the output.
+
+
+July 14th, 2011: mysqlmymonlite.sh v0.1.5 / v0.1.5 WHM 
+* Updated MySQL version detection function
+
+July 14th, 2011: mysqlmymonlite.sh v0.1.4 / v0.1.4 WHM 
+* Converted majority of fixed commands to variable path for better compatibility
+* Corrected MySQL error log path detection for empty log paths
+
+July 14th, 2011: mysqlmymonlite.sh v0.1.6 Debian 
+* Updated MySQL version detection function
+* Converted majority of fixed commands to variable path for better compatibility
+* Corrected MySQL error log path detection for empty log paths
+
+July 13th, 2011: mysqlmymonlite.sh v0.1.3 
+* Added $SRCDIR variable to define non-root path for mysqlreport 
+
+mysqlmymonlite.sh v0.1.2 
+*  fix cpuinfo detection for Q6600 processors
+
+mysqlmymonlite.sh v0.1.1 
+* revise vbshowtable function to allow saving output to text file
+
+July 13th, 2011: mysqlmymonlite.sh v0.1.3 WHM 
+*  Added $SRCDIR variable to define non-root path for mysqlreport 
+
+mysqlmymonlite.sh v0.1.2 WHM 
+* fix cpuinfo detection for Q6600 processors
+
+mysqlmymonlite.sh v0.1.1 WHM 
+* revise vbshowtable function to allow saving output to text file
+
+
+July 13th, 2011: mysqlmymonlite.sh v0.1.5 Debian 
+* Globally replaced egrep -E which in Debian is deprecated with grep -E
+
+mysqlmymonlite.sh v0.1.4 Debian 
+* Added $SRCDIR variable to define non-root path for mysqlreport
+* revise vbshowtable function to allow saving output to text file
+
+July 13th, 2011: v0.1.3debian 
+* Fixed Hardware Info cpu detection for Debian version with Intel Xeon Q6600 Quad core processor on VMWARE based server.
+
+July 11th, 2011: v0.1.2debian 
+* Additional fixes for Debian and Nginx due to differences in Nginx startup scripts compared to CentOS/RHEL. Led to inability to determine nginx.conf location
+
+July 11th, 2011: v0.1.1debian 
+* Fixed Debian version for non-apache webservers i.e. Nginx
+
+July 10th, 2011: v0.1.0debian 
+* Added Debian version v0.1.0debian - tested only on Debian v6.0.2.1 with default Apache2/php5 packages and MariaDB 5.2.7 MySQL.
+
+July 5th, 2011: v0.1.0 & v0.1.0whm 
+* Added a WHM/Cpanel version v0.1.0whm as the Apache httpd paths are different from non-WHM/Cpanel version based Apache.
+
+July 2nd, 2011: v0.1.0 
+* Fixed up Nginx settings output to remove both rewrite and auth_* lines from display
+* Added mysql compile info to ./mysqlmymonlite.sh check output
+* Added variable for Apache httpd error_log path (not used for any output yet).
+
+July 1st, 2011: v0.0.9 
+* Fixed MySQL version check for MySQL 5.5.x
+* Added mysqladmin variables output
+
+July 1st, 2011: v0.0.8 
+* Fixed httpd.conf variable errors
+* Fixed integer expression expected error on MySQL version check
+
+June 30th, 2011: v0.0.7 
+* Added additional checks for Nginx and nginx.conf options
+* Add vbshowtables command just to output a specified database's index, data and per table size and info
+	
+Code:
+
+	
+[root@localhost ~]# ./mysqlmymonlite.sh --help
+install mysqlmymonlite.sh at /root
+chmod +x mysqlmymonlite.sh
+
+./mysqlmymonlite.sh --help
+./mysqlmymonlite.sh check
+./mysqlmymonlite.sh run
+./mysqlmymonlite.sh mysql
+./mysqlmymonlite.sh vmstat
+./mysqlmymonlite.sh showcreate
+./mysqlmymonlite.sh showindex
+./mysqlmymonlite.sh vbshowtables
+
+June 28th, 2011: v0.0.6 
+* Added check for MySQL versions <5.1 to bypass unsupported newer features in MySQL >5.1
+* Added database show create table schema and show table index output functions to existing set of modes. Not needed for server optimisations but useful if you need to check if your database's indexes and structure are correct.
+
+	
+Code:
+
+	
+./mysqlmymonlite.sh --help
+
+install mysqlmymonlite.sh at /root
+chmod +x mysqlmymonlite.sh
+
+./mysqlmymonlite.sh --help
+./mysqlmymonlite.sh check
+./mysqlmymonlite.sh run
+./mysqlmymonlite.sh mysql
+./mysqlmymonlite.sh vmstat
+./mysqlmymonlite.sh showcreate
+./mysqlmymonlite.sh showindex
+
+ 
+
+
+June 28th, 2011: v0.0.5 
+* No longer needed to input httpd.conf/httpd-mpm.conf paths, script will find them automatically
+* Fixed InnoDB status output for MySQL 5.5.x servers
+* Added detection to see if Apache httpd server is running, if not running, httpd -l and httpd -M output is not outputted
+* Added x86_64/i386 check for EPEL REPO although lshw package is not longer needed. Still left it in for future use.
+* Reduce total amount of characters outputted. Good news, forums here have had post character limit raised to 130K from 65K. Thanks Steve :)

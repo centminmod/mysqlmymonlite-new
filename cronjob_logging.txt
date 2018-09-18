@@ -1,0 +1,1 @@
+*/15 * * * * /root/tools/mysqlmymonlite.sh run 2>/dev/null > /root/mysqlmymonstats/stats_mysqlmymonlite_`date +"\%d\%m\%y-\%H\%M\%S"`.txt
