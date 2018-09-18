@@ -1,12 +1,12 @@
 #!/bin/bash
 #######################################################
-# Copyright (C) 2011-2017
+# Copyright (C) 2011-2018
 # Program: mysqlmymonlite.sh
 # Lite version of extensive featured mysqlmymon.sh
 # MySQL and system monitoring script 
 # by George Liu (eva2000) centminmod.com
-# Updated: May 3, 2017 AEST 
-MYSQLMYMONVER='0.5.5'
+# Updated: September 19, 2018 AEST
+MYSQLMYMONVER='0.5.6'
 MYSQLMYMONURL='mysqlmymon.com'
 #######################################################
 # Usage is free just keep the credits intact
@@ -123,8 +123,8 @@ if [[ "$WEBONLY" = [nN] ]]; then
 	MYSQLCLI="$(which mysql)"
 fi
 
-GREP="$(which grep)"
-EGREP="$(which egrep)"
+GREP="grep"
+EGREP="egrep"
 AWK="$(which awk)"
 TR="$(which tr)"
 
@@ -238,29 +238,14 @@ HTTPDMPMCHECK=`awk '/httpd-mpm.conf/' $HTTPDCONF | awk '{ print $1 }'`
 	fi
 fi
 
-NGINXCHECK=`ps ax | awk '/nginx/' | awk '!/awk/'`
-
+NGINXCHECK=$(ps ax | awk '/nginx/' | awk '!/awk/')
 if [ ! -z "$NGINXCHECK" ]; then
-NGINXINITFILE='/etc/init.d/nginx'
-NGINXSRCPATHCHECK=`awk '/^NGINX_CONF_FILE/' $NGINXINITFILE`
-NGINXRPMPATHCHECK=`awk '/^conffile=/' $NGINXINITFILE`
-NGINXADMINCPPATHCHECK=`awk '/^CONFIGFILE=/' $NGINXINITFILE`
-NGINX="$(which nginx)"
-
-if [ ! -z "$NGINXSRCPATHCHECK" ]; then
-NGINXCONFPATH=`$GREP ^NGINX_CONF_FILE $NGINXINITFILE | sed -e 's/NGINX_CONF_FILE=//g' | $TR -d '"'`
-	elif [ ! -z "$NGINXRPMPATHCHECK" ]; then
-NGINXCONFPATH=`$GREP '^conffile=' $NGINXINITFILE | awk -F "-" '{print $2}' | sed -e 's/\}//'`
-	elif [ ! -z "$NGINXADMINCPPATHCHECK" ]; then
-NGINXCONFPATH=`$GREP '^CONFIGFILE=' $NGINXINITFILE | sed -e 's/CONFIGFILE=//g' | $TR -d '"'`
-fi
-
-if [ ! -z "$NGINXCONFPATHOVERRIDE" ]; then
-NGINXCONFPATH="$NGINXCONFPATHOVERRIDE"
-fi
-
-NGINXSETTINGS=`$EGREP '(^user|^worker_processes|^worker_priority|^worker_rlimit_nofile|^timer_resolution|^pcre_jit|^worker_connections|^accept_mutex|^multi_accept|^accept_mutex_delay|map_hash|server_names_hash|variables_hash|tcp_|^limit_|sendfile|server_tokens|keepalive_|lingering_|gzip|client_|connection_pool_size|directio|large_client|types_hash|server_names_hash|open_file|open_log|^include|^#include)' $NGINXCONFPATH | $EGREP -Ev '(rewrite|auth_)'`
-
+  NGINX=$(which nginx)
+  NGINXCONFPATH=$($NGINX -t 2>&1 | awk '/nginx: configuration file/ {print $4}')
+  if [ ! -z "$NGINXCONFPATHOVERRIDE" ]; then
+    NGINXCONFPATH="$NGINXCONFPATHOVERRIDE"
+  fi
+  NGINXSETTINGS=$($EGREP '(^user|^worker_processes|^worker_priority|^worker_rlimit_nofile|^timer_resolution|^pcre_jit|^worker_connections|^accept_mutex|^multi_accept|^accept_mutex_delay|map_hash|server_names_hash|variables_hash|tcp_|^limit_|sendfile|server_tokens|keepalive_|lingering_|gzip|client_|connection_pool_size|directio|large_client|types_hash|server_names_hash|open_file|open_log|^include|^#include)' $NGINXCONFPATH | $EGREP -Ev '(rewrite|auth_|gzip_ratio)')
 fi
 
 fi # MYSQLSERVERONLY
