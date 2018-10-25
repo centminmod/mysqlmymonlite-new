@@ -5,8 +5,8 @@
 # Lite version of extensive featured mysqlmymon.sh
 # MySQL and system monitoring script 
 # by George Liu (eva2000) centminmod.com
-# Updated: September 19, 2018 AEST
-MYSQLMYMONVER='0.5.6'
+# Updated: October 25 2018 AEST
+MYSQLMYMONVER='0.5.7'
 MYSQLMYMONURL='mysqlmymon.com'
 #######################################################
 # Usage is free just keep the credits intact
@@ -213,7 +213,7 @@ fi # LITESPEEDCHECK
 
 # awk equivalent
 # ps ax | awk '/httpd/, /apache/' | awk '!/awk/'
-APACHECHECK=`ps ax | $GREP -Ev '(grep|lshttpd|lscgid)' | $GREP -E '(httpd|apache)'`
+APACHECHECK=`ps ax | $GREP -Ev '(grep|lshttpd|lscgid|domlogs)' | $GREP -E '(httpd|apache)'`
 
 if [ ! -z "$APACHECHECK" ]; then
 

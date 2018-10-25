@@ -1,3 +1,7 @@
+October 25th, 2018:
+mysqlmymonlite.sh v0.5.7 / v0.5.7 WHM / v0.5.7 Debian
+* fix cpanel/WHM incorrect detect for Apache existence when LiteSpeed running
+
 September 19th, 2018:
 mysqlmymonlite.sh v0.5.6 / v0.5.6 WHM / v0.5.6 Debian
 * improved nginx.conf detection
